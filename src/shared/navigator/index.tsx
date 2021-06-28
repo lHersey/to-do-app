@@ -1,8 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { FC } from 'react';
-import HomeScreen from 'screens/home';
-import LoginScreen from 'screens/login';
+import CurrentTasks from 'screens/current-tasks';
 import { Screens } from 'shared/constants/screens';
 
 const Stack = createStackNavigator();
@@ -10,9 +9,8 @@ const Stack = createStackNavigator();
 const Navigator: FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Screens.HOME} headerMode="none">
-        <Stack.Screen name={Screens.HOME} component={HomeScreen} />
-        <Stack.Screen name={Screens.LOGIN} component={LoginScreen} />
+      <Stack.Navigator initialRouteName={Screens.CURRENT_TASKS} headerMode="none">
+        <Stack.Screen name={Screens.CURRENT_TASKS} component={CurrentTasks} />
       </Stack.Navigator>
     </NavigationContainer>
   );

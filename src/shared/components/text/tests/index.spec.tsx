@@ -2,21 +2,21 @@ import { render } from '@testing-library/react-native';
 import React, { ComponentProps, FC } from 'react';
 import Providers from 'shared/providers';
 
-import BaseLogin from '../index';
+import BaseText from '../index';
 
-const Login: FC<ComponentProps<typeof BaseLogin>> = props => {
+const Text: FC<ComponentProps<typeof BaseText>> = props => {
   return (
     <Providers>
-      <BaseLogin {...props} />
+      <BaseText {...props} />
     </Providers>
   );
 };
 
-describe('<Login />', () => {
+describe('<Text />', () => {
   describe('snapshots', () => {
     it('should match snapshot', () => {
       expect.hasAssertions();
-      const rendered = render(<Login />).toJSON();
+      const rendered = render(<Text>This is a text</Text>).toJSON();
 
       expect(rendered).toMatchSnapshot();
     });
@@ -25,9 +25,10 @@ describe('<Login />', () => {
   describe('unit', () => {
     it('should render the text', () => {
       expect.hasAssertions();
-      const { queryByText } = render(<Login />);
+      const text = 'Hello text';
+      const { queryByText } = render(<Text>{text}</Text>);
 
-      expect(queryByText('Hello Login')).toBeTruthy();
+      expect(queryByText(text)).toBeTruthy();
     });
   });
 });
