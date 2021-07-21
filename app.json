@@ -23,7 +23,10 @@
     },
     "ios": {
       "bundleIdentifier": "dev.hersey.tasker",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Validate access to private tasks on the app"
+      }
     }
   }
 }

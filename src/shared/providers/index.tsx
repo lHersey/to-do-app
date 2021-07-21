@@ -13,8 +13,6 @@ const Providers: FC = props => {
       ...DefaultTheme,
       colors: {
         ...DefaultTheme.colors,
-        primary: THEME.PRIMARY_COLOR,
-        accent: THEME.ACCENT_COLOR,
       },
     }),
     [],
