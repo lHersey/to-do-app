@@ -1584,6 +1584,25 @@
     xcode "^3.0.1"
     xml2js "^0.4.23"
 
+"@expo/config-plugins@^3.0.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.0.5.tgz#9390403d7bf49bf35219c0922bf7bf6d81390988"
+  integrity sha512-hHKr6i201QG16ms93XiXwcI1IhDYhITCRt7hWNO1UPxt2Cm7yDOG2YoGkauP0V/nAN3TEocDYbCrltGFBdoCTg==
+  dependencies:
+    "@expo/config-types" "^42.0.0"
+    "@expo/json-file" "8.2.31"
+    "@expo/plist" "0.0.13"
+    debug "^4.3.1"
+    find-up "~5.0.0"
+    fs-extra "9.0.0"
+    getenv "^1.0.0"
+    glob "7.1.6"
+    resolve-from "^5.0.0"
+    semver "^7.3.5"
+    slash "^3.0.0"
+    xcode "^3.0.1"
+    xml2js "^0.4.23"
+
 "@expo/config-types@^40.0.0-beta.2":
   version "40.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-40.0.0-beta.2.tgz#4fea4ef5654d02218b02b0b3772529a9ce5b0471"
@@ -1593,6 +1612,11 @@
   version "41.0.0"
   resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-41.0.0.tgz#ffe1444c6c26e0e3a8f7149b4afe486e357536d1"
   integrity sha512-Ax0pHuY5OQaSrzplOkT9DdpdmNzaVDnq9VySb4Ujq7UJ4U4jriLy8u93W98zunOXpcu0iiKubPsqD6lCiq0pig==
+
+"@expo/config-types@^42.0.0":
+  version "42.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/config-types/-/config-types-42.0.0.tgz#3e3e125ec092c0c34dbfaf19be5480402de3d677"
+  integrity sha512-Rj02OMZke2MrGa/1Y/EScmR7VuWbDEHPJyvfFyyLbadUt+Yv6isCdeFzDt71I7gJlPR9T4fzixeYLrtXXOTq0w==
 
 "@expo/config@4.0.0":
   version "4.0.0"
@@ -1742,6 +1766,15 @@
   dependencies:
     "@babel/code-frame" "~7.10.4"
     fs-extra "9.0.0"
+    json5 "^1.0.1"
+    write-file-atomic "^2.3.0"
+
+"@expo/json-file@8.2.31":
+  version "8.2.31"
+  resolved "https://registry.yarnpkg.com/@expo/json-file/-/json-file-8.2.31.tgz#70ac99cb9c9029a51a5b879212f7f4ec21804589"
+  integrity sha512-GvbL1tQnM3kGOM9hG+lwGbPJ/1tX+Sb8ZkqRrJlRpWGRa4DwnpLvIZHlWMb1ug/ye1QC7+RK/KwRZ7xcAXergA==
+  dependencies:
+    "@babel/code-frame" "~7.10.4"
     json5 "^1.0.1"
     write-file-atomic "^2.3.0"
 
@@ -7957,12 +7990,12 @@ expo-keep-awake@~9.1.2:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.1.2.tgz#b3e52c7bef0ade975ae88637a2bf980f6b573368"
   integrity sha512-CCuEOQUNLYtMA0rt0sQ9u5LlIMH7lDJG7dImoorfKMsP95yHXy8dl3oCdtaz2zbsPgggVYeom9gE+gQu+Ki4rQ==
 
-expo-local-authentication@~11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/expo-local-authentication/-/expo-local-authentication-11.0.2.tgz#6762611988ce07b05f11dda906505745c4f76dc0"
-  integrity sha512-uvDBsyyETxRWLK/nJaS1cET/6u1UVYp2GhqIYSOhR4n2hoKvakOum7EG8BUi7D6jqzRBbpBGIP5ysfOWBNk53Q==
+expo-local-authentication@~11.1.1:
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/expo-local-authentication/-/expo-local-authentication-11.1.1.tgz#ef9de3f74e504c14ab4459d6c0c825f87d3c0c18"
+  integrity sha512-58uXDa8kkcsITrWtDJL24F+VNVXpIlN1X4xQDI0BHrWxIobRLTkhDhYwV78X+gJj3WKMBv3d2mkd2fmg2koT5Q==
   dependencies:
-    "@expo/config-plugins" "^1.0.18"
+    "@expo/config-plugins" "^3.0.0"
     invariant "^2.2.4"
 
 expo-module-scripts@^2.0.0:
