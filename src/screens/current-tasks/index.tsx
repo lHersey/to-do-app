@@ -1,4 +1,6 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { FC, useState } from 'react';
+import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import TaskItem, { Task } from 'shared/components/task-item';
@@ -8,7 +10,7 @@ import { Card, Container, NewTodoInput, Title } from './styles';
 
 const CurrentTasks: FC = () => {
   const [value, setValue] = useState('');
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const { tasks, setTasks } = useTasksEffect();
 
   const handleAddItem = useCallback(() => {
     const task: Task = {
@@ -19,7 +21,7 @@ const CurrentTasks: FC = () => {
 
     setValue('');
     setTasks(prev => [task, ...prev]);
-  }, [value]);
+  }, [value, setTasks]);
 
   const handleCheckboxTap = useCallback(
     (task: Task) => {
@@ -32,7 +34,7 @@ const CurrentTasks: FC = () => {
 
       setTasks(_tasks);
     },
-    [tasks],
+    [tasks, setTasks],
   );
 
   return (
@@ -54,6 +56,32 @@ const CurrentTasks: FC = () => {
       </Card>
     </Container>
   );
+};
+
+const useTasksEffect = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    async function hydrate() {
+      const str = await AsyncStorage.getItem('TASKS');
+
+      if (!str) return;
+      setTasks(JSON.parse(str));
+    }
+
+    hydrate();
+  }, []);
+
+  useEffect(() => {
+    async function persist() {
+      const str = JSON.stringify(tasks);
+      await AsyncStorage.setItem('TASKS', str);
+    }
+
+    persist();
+  }, [tasks]);
+
+  return { tasks, setTasks };
 };
 
 export default CurrentTasks;

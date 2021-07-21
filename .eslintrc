@@ -21,7 +21,8 @@
     "prettier/prettier": "error",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
-    "jest/unbound-method": "off"
+    "jest/unbound-method": "off",
+    "@typescript-eslint/no-floating-promises": "off"
   },
   "overrides": [
     {
